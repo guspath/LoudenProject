@@ -1,5 +1,4 @@
-
-
+from code1.const import W_WIDTH, E_SPEED
 from code1.entity import Entity1
 
 class Background(Entity1):
@@ -9,4 +8,6 @@ class Background(Entity1):
 
 
     def move(self):
-        pass
+        self.rect.centerx -= E_SPEED[self.name]
+        if self.rect.right <= 0:
+            self.rect.left = W_WIDTH

@@ -1,3 +1,5 @@
+import pygame
+
 from code1.entity import Entity1
 from code1.entity_Factory import EntityFactory
 
@@ -14,5 +16,7 @@ class Level:
     def run(self):
         while True:
             for e in self.e_list:
-                self.window.blit()
+                self.window.blit(source=e.surf, dest=e.rect)
+                e.move()
+            pygame.display.flip()
         pass
