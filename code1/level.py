@@ -17,6 +17,7 @@ class Level:
         self.g_mode = g_mode
         self.e_list: list[Entity1] = []
         self.e_list.extend(EntityFactory.g_entity('Level1bg'))
+        self.e_list.append(EntityFactory.g_entity('Player1'))
         self.timeout = 20000
 
 
