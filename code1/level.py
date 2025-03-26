@@ -1,5 +1,11 @@
-import pygame
+import sys
 
+import pygame
+from pygame import Surface
+
+from pygame.font import Font
+
+from code1.const import C_WHITE, W_HEIGHT, W_WIDTH
 from code1.entity import Entity1
 from code1.entity_Factory import EntityFactory
 
@@ -11,12 +17,34 @@ class Level:
         self.g_mode = g_mode
         self.e_list: list[Entity1] = []
         self.e_list.extend(EntityFactory.g_entity('Level1bg'))
+        self.timeout = 20000
 
 
     def run(self):
+        pygame.mixer_music.load(f'./asset/{self.name}.mp3')
+        pygame.mixer_music.play(-1)
+        frames = pygame.time.Clock()
         while True:
+            frames.tick(60)
             for e in self.e_list:
                 self.window.blit(source=e.surf, dest=e.rect)
                 e.move()
+            for event in pygame.event.get():
+                if event.type == pygame.QUIT:
+                    pygame.quit()
+                    sys.exit()
+            # screen texts
+            self.text_lvl(17, f'{self.name} - Remaining Time: {self.timeout / 1000:.1f}s', C_WHITE, (W_WIDTH - 90, W_HEIGHT - 8))
+            self.text_lvl(17, f'FPS: {frames.get_fps():.0f}', C_WHITE, (21, W_HEIGHT - 8))
+            self.text_lvl(17, f'Entitys: {len(self.e_list)}', C_WHITE, (80, W_HEIGHT - 8))
             pygame.display.flip()
         pass
+
+
+
+
+    def text_lvl(self, text_size: int, text: str, text_color: tuple, text_center_pos: tuple):
+        text_font: Font = pygame.font.SysFont("Open Sans", size=text_size)
+        text_surf: Surface = text_font.render(text, True, text_color).convert_alpha()
+        text_rect = Rect = text_surf.get_rect(center=text_center_pos)
+        self.window.blit(source=text_surf, dest=text_rect)
