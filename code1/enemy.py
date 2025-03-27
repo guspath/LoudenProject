@@ -8,5 +8,4 @@ class Enemy(Entity1):
 
     def move(self):
         self.rect.centerx -= E_SPEED[self.name]
-        if self.rect.right <= 0:
-            self.rect.left = W_WIDTH
+

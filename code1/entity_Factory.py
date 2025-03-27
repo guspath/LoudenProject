@@ -7,11 +7,10 @@ from code1.player import Player
 
 
 class EntityFactory:
-    def __init__(self):
-        pass
+
 
     @staticmethod
-    def g_entity(entity_n: str, WIN_WIDTH=None):
+    def g_entity(entity_n: str):
         match entity_n:
             case 'Level1bg':
                 bg_l = []

@@ -9,6 +9,7 @@ from pygame.font import Font
 from code1.const import C_WHITE, W_HEIGHT, W_WIDTH, OPTIONS_MENU, E_ENEMY, S_TIME
 from code1.entity import Entity1
 from code1.entity_Factory import EntityFactory
+from code1.entity_Mediator import EntityMediator
 
 
 class Level:
@@ -49,6 +50,10 @@ class Level:
             self.text_lvl(17, f'FPS: {frames.get_fps():.0f}', C_WHITE, (21, W_HEIGHT - 8))
             self.text_lvl(17, f'Entitys: {len(self.e_list)}', C_WHITE, (80, W_HEIGHT - 8))
             pygame.display.flip()
+
+            # checking collisions/health
+            EntityMediator.v_collisions(e_list=self.e_list)
+            EntityMediator.v_health(e_list=self.e_list)
         pass
 
 

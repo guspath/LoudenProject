@@ -27,6 +27,28 @@ E_SPEED = {
     'Enemy2'   : 2,
 }
 
+E_HEALTH = {
+    'Level1bg0': 999,
+    'Level1bg1': 999,
+    'Level1bg2': 999,
+    'Level1bg3': 999,
+    'Level1bg4': 999,
+    'Level1bg5': 999,
+    'Level1bg6': 999,
+    'Level2bg0': 999,
+    'Level2bg1': 999,
+    'Level2bg2': 999,
+    'Level2bg3': 999,
+    'Level2bg4': 999,
+    'Player1': 300,
+    'Player1Shot': 1,
+    'Player2': 300,
+    'Player2Shot': 1,
+    'Enemy1': 50,
+    'Enemy1Shot': 1,
+    'Enemy2': 60,
+    'Enemy2Shot': 1,
+}
 
 
 
