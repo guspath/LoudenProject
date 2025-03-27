@@ -33,4 +33,4 @@ class Player(Entity1):
             self.s_delay = E_S_DELAY[self.name]
             p_key = pygame.key.get_pressed()
             if p_key[PLAYER_KEY_SHOT[self.name]]:
-                return PlayerShot(name=f'{self.name}Shot', position=(self.rect.centerx, self.rect.centery))
+                return PlayerShot(name=f'{self.name}Shot', position=(self.rect.right, self.rect.centery -15))

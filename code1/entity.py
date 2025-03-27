@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 import pygame.image
 
-from code1.const import E_HEALTH, E_DMG
+from code1.const import E_HEALTH, E_DMG, E_SCORE
 
 
 class Entity1(ABC):
@@ -14,6 +14,7 @@ class Entity1(ABC):
         self.e_speed = 0
         self.health = E_HEALTH[self.name]
         self.dmg = E_DMG[self.name]
+        self.score = E_SCORE[self.name]
         self.l_dmg = 'None'
     @abstractmethod
     def move(self):

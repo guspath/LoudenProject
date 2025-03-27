@@ -41,8 +41,19 @@ class EntityMediator:
                     e1.rect.top <= e2.rect.bottom):
                 e1.health -= e2.dmg
                 e2.health -= e1.dmg
-                e1.last_dmg = e2.name
-                e2.last_dmg = e1.name
+                e1.l_dmg = e2.name
+                e2.l_dmg = e1.name
+
+    @staticmethod
+    def __score(enemy: Enemy, e_list: list[Entity1]):
+        if enemy.l_dmg == 'Player1Shot':
+            for e in e_list:
+                if e.name == 'Player1':
+                    e.score += enemy.score
+        elif enemy.l_dmg == 'Player2Shot':
+            for e in e_list:
+                if e.name == 'Player2':
+                    e.score += enemy.score
 
 
 
@@ -59,4 +70,6 @@ class EntityMediator:
     def v_health(e_list: list[Entity1]):
         for e in e_list:
             if e.health <= 0:
+                if isinstance(e, Enemy):
+                    EntityMediator.__score(e, e_list)
                 e_list.remove(e)

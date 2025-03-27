@@ -56,8 +56,8 @@ E_HEALTH = {
 }
 
 E_S_DELAY = {
-    'Player1': 25,
-    'Player2': 20,
+    'Player1': 20,
+    'Player2': 15,
     'Enemy1': 45,
     'Enemy2': 60,
 }
@@ -83,6 +83,29 @@ E_DMG = {
     'Enemy1Shot': 20,
     'Enemy2': 1,
     'Enemy2Shot': 15,
+}
+
+E_SCORE = {
+    'Level1bg0': 0,
+    'Level1bg1': 0,
+    'Level1bg2': 0,
+    'Level1bg3': 0,
+    'Level1bg4': 0,
+    'Level1bg5': 0,
+    'Level1bg6': 0,
+    'Level2bg0': 0,
+    'Level2bg1': 0,
+    'Level2bg2': 0,
+    'Level2bg3': 0,
+    'Level2bg4': 0,
+    'Player1': 0,
+    'Player1Shot': 0,
+    'Player2': 0,
+    'Player2Shot': 0,
+    'Enemy1': 100,
+    'Enemy1Shot': 0,
+    'Enemy2': 125,
+    'Enemy2Shot': 0,
 }
 
 # O

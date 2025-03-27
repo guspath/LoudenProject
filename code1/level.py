@@ -6,7 +6,7 @@ from pygame import Surface
 
 from pygame.font import Font
 
-from code1.const import C_WHITE, W_HEIGHT, W_WIDTH, OPTIONS_MENU, E_ENEMY, S_TIME
+from code1.const import C_WHITE, W_HEIGHT, W_WIDTH, OPTIONS_MENU, E_ENEMY, S_TIME, C_BLUEE, C_LEMON, C_L_RED
 from code1.enemy import Enemy
 from code1.entity import Entity1
 from code1.entity_Factory import EntityFactory
@@ -42,6 +42,10 @@ class Level:
                     shot = e.shot()
                     if shot is not None:
                         self.e_list.append(shot)
+                if e.name == 'Player1':
+                    self.text_lvl(20, f'Player1 - HP: {e.health} | Score: {e.score}', C_BLUEE, (87, 25))
+                if e.name == 'Player2':
+                    self.text_lvl(20, f'Player2 - HP: {e.health} | Score: {e.score}', C_L_RED, (83, 45))
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     pygame.quit()
@@ -49,7 +53,6 @@ class Level:
                 if event.type == E_ENEMY:
                     r_enemy = random.choice(('Enemy1', 'Enemy2'))
                     self.e_list.append(EntityFactory.g_entity(r_enemy))
-
 
             # screen texts
             self.text_lvl(17, f'{self.name} - Remaining Time: {self.timeout / 1000:.1f}s', C_WHITE, (W_WIDTH - 90, W_HEIGHT - 8))
