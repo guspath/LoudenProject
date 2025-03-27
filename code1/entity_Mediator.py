@@ -1,5 +1,8 @@
+from code1.const import W_WIDTH
 from code1.enemy import Enemy
+from code1.enemyShot import EnemyShot
 from code1.entity import Entity1
+from code1.playerShot import PlayerShot
 
 
 class EntityMediator:
@@ -7,7 +10,13 @@ class EntityMediator:
     @staticmethod
     def __v_c_window(e: Entity1):
         if isinstance(e, Enemy):
-            if e.rect.right < 0:
+            if e.rect.right <= 0:
+                e.health = 0
+        if isinstance(e, PlayerShot):
+            if e.rect.left >= W_WIDTH:
+                e.health = 0
+        if isinstance(e, EnemyShot):
+            if e.rect.right <= 0:
                 e.health = 0
 
 

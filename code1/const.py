@@ -13,6 +13,7 @@ C_LEMON = (0, 240, 0)
 # E
 E_ENEMY = pygame.USEREVENT + 1
 
+
 E_SPEED = {
     'Level1bg0': 0,
     'Level1bg1': 1,
@@ -54,6 +55,12 @@ E_HEALTH = {
     'Enemy2Shot': 1,
 }
 
+E_S_DELAY = {
+    'Player1': 25,
+    'Player2': 20,
+    'Enemy1': 45,
+    'Enemy2': 60,
+}
 
 
 # O
