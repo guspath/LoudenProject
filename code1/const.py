@@ -62,6 +62,28 @@ E_S_DELAY = {
     'Enemy2': 60,
 }
 
+E_DMG = {
+    'Level1bg0': 0,
+    'Level1bg1': 0,
+    'Level1bg2': 0,
+    'Level1bg3': 0,
+    'Level1bg4': 0,
+    'Level1bg5': 0,
+    'Level1bg6': 0,
+    'Level2bg0': 0,
+    'Level2bg1': 0,
+    'Level2bg2': 0,
+    'Level2bg3': 0,
+    'Level2bg4': 0,
+    'Player1': 1,
+    'Player1Shot': 25,
+    'Player2': 1,
+    'Player2Shot': 20,
+    'Enemy1': 1,
+    'Enemy1Shot': 20,
+    'Enemy2': 1,
+    'Enemy2Shot': 15,
+}
 
 # O
 OPTIONS_MENU = ('1P - SOLO GAME',
