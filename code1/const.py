@@ -25,6 +25,10 @@ E_SPEED = {
     'Player2'  : 3,
     'Enemy1'   : 2,
     'Enemy2'   : 2,
+    'Player1Shot': 1,
+    'Player2Shot': 3,
+    'Enemy1Shot': 3,
+    'Enemy2Shot': 3,
 }
 
 E_HEALTH = {
@@ -67,8 +71,9 @@ PLAYER_KEY_LEFT = {'Player1': pygame.K_LEFT,
                    'Player2': pygame.K_a}
 PLAYER_KEY_RIGHT = {'Player1': pygame.K_RIGHT,
                     'Player2': pygame.K_d}
-PLAYER_KEY_SHOOT = {'Player1': pygame.K_RCTRL,
+PLAYER_KEY_SHOT = {'Player1': pygame.K_RCTRL,
                     'Player2': pygame.K_LCTRL}
+
 
 # S
 S_TIME = 3000
