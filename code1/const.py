@@ -141,7 +141,7 @@ S_TIME = 3500
 #T
 TO_E = pygame.USEREVENT + 2
 TO_D = 100
-TO_L = 5000
+TO_L = 15000
 
 # W
 W_WIDTH = 600
