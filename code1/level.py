@@ -16,22 +16,26 @@ from code1.player import Player
 
 
 class Level:
-    def __init__(self, window, name, g_mode):
+    def __init__(self, window: Surface, name: str,  g_mode: str, score_p: list[int]):
         self.timeout = TO_L
         self.window = window
         self.name = name
         self.g_mode = g_mode
         self.e_list: list[Entity1] = []
         self.e_list.extend(EntityFactory.g_entity(self.name + 'bg'))
-        self.e_list.append(EntityFactory.g_entity('Player1'))
+        p = (EntityFactory.g_entity('Player1'))
+        p.score = score_p[0]
+        self.e_list.append(p)
         if g_mode in [OPTIONS_MENU[1]]:
-            self.e_list.append(EntityFactory.g_entity('Player2'))
+            p = (EntityFactory.g_entity('Player2'))
+            p.score = score_p[1]
+            self.e_list.append(p)
         pygame.time.set_timer(E_ENEMY, S_TIME)
         pygame.time.set_timer(TO_E, TO_D)
 
 
 
-    def run(self):
+    def run(self, score_p: list[int]):
         pygame.mixer_music.load(f'./asset/{self.name}.mp3')
         pygame.mixer_music.play(-1)
         frames = pygame.time.Clock()
@@ -58,10 +62,23 @@ class Level:
                 if event.type == TO_E:
                     self.timeout -= TO_D
                     if self.timeout == 0:
+                        for e in self.e_list:
+                            if isinstance(e, Player) and e.name == 'Player1':
+                                score_p[0] = e.score
+                            if isinstance(e, Player) and e.name == 'Player2':
+                                score_p[1] = e.score
                         return True
 
+                v_player = False
+                for e in self.e_list:
+                    if isinstance(e, Player):
+                        v_player = True
+
+                if not v_player:
+                    return False
+
             # screen texts
-            self.text_lvl(17, f'{self.name} - Remaining Time: {self.timeout / 1000:.1f}s', C_WHITE, (W_WIDTH - 90, W_HEIGHT - 8))
+            self.text_lvl(17, f'{self.name} - Time Left: {self.timeout / 1000:.1f}s', C_WHITE, (W_WIDTH - 90, W_HEIGHT - 8))
             self.text_lvl(17, f'FPS: {frames.get_fps():.0f}', C_WHITE, (21, W_HEIGHT - 8))
             self.text_lvl(17, f'Entitys: {len(self.e_list)}', C_WHITE, (80, W_HEIGHT - 8))
             pygame.display.flip()

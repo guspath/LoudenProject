@@ -17,11 +17,12 @@ class Game:
             r_menu = menu.run()
 
             if r_menu in [OPTIONS_MENU[0], OPTIONS_MENU[1]]:
-                level = Level(self.window, 'Level1', r_menu)
-                r_level = level.run()
+                score_p = [0, 0] #P1, P2
+                level = Level(self.window, 'Level1', r_menu, score_p)
+                r_level = level.run(score_p)
                 if r_level:
-                    level = Level(self.window, 'Level2', r_menu)
-                    r_level = level.run()
+                    level = Level(self.window, 'Level2', r_menu, score_p)
+                    r_level = level.run(score_p)
 
 
             elif r_menu == OPTIONS_MENU[3]:
