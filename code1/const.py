@@ -135,15 +135,31 @@ PLAYER_KEY_RIGHT = {'Player1': pygame.K_RIGHT,
 PLAYER_KEY_SHOT = {'Player1': pygame.K_RCTRL,
                     'Player2': pygame.K_LCTRL}
 
-
 # S
 S_TIME = 3500
 
 #T
 TO_E = pygame.USEREVENT + 2
 TO_D = 100
-TO_L = 15000
+TO_L = 5000
 
 # W
 W_WIDTH = 600
 W_HEIGHT = 480
+
+#P
+POS_S = {'Title': (W_WIDTH / 2, 50),
+             'EnterName': (W_WIDTH / 2, 80),
+             'Label': (W_WIDTH / 2, 90),
+             'Name': (W_WIDTH / 2, 110),
+             0: (W_WIDTH / 2, 110),
+             1: (W_WIDTH / 2, 130),
+             2: (W_WIDTH / 2, 150),
+             3: (W_WIDTH / 2, 170),
+             4: (W_WIDTH / 2, 190),
+             5: (W_WIDTH / 2, 210),
+             6: (W_WIDTH / 2, 230),
+             7: (W_WIDTH / 2, 250),
+             8: (W_WIDTH / 2, 270),
+             9: (W_WIDTH / 2, 290),
+             }
