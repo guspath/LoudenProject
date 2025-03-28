@@ -22,6 +22,12 @@ E_SPEED = {
     'Level1bg4': 4,
     'Level1bg5': 5,
     'Level1bg6': 6,
+    'Level2bg0': 0,
+    'Level2bg1': 1,
+    'Level2bg2': 2,
+    'Level2bg3': 3,
+    'Level2bg4': 4,
+    'Level2bg5': 5,
     'Player1'  : 3,
     'Player2'  : 3,
     'Enemy1'   : 2,
@@ -45,6 +51,7 @@ E_HEALTH = {
     'Level2bg2': 999,
     'Level2bg3': 999,
     'Level2bg4': 999,
+    'Level2bg5': 999,
     'Player1': 300,
     'Player1Shot': 1,
     'Player2': 300,
@@ -75,6 +82,7 @@ E_DMG = {
     'Level2bg2': 0,
     'Level2bg3': 0,
     'Level2bg4': 0,
+    'Level2bg5': 0,
     'Player1': 1,
     'Player1Shot': 25,
     'Player2': 1,
@@ -98,6 +106,7 @@ E_SCORE = {
     'Level2bg2': 0,
     'Level2bg3': 0,
     'Level2bg4': 0,
+    'Level2bg5': 0,
     'Player1': 0,
     'Player1Shot': 0,
     'Player2': 0,
@@ -129,6 +138,11 @@ PLAYER_KEY_SHOT = {'Player1': pygame.K_RCTRL,
 
 # S
 S_TIME = 3000
+
+#T
+TO_E = pygame.USEREVENT + 2
+TO_D = 100
+TO_L = 5000
 
 # W
 W_WIDTH = 600

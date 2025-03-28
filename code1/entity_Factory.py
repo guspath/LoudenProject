@@ -18,6 +18,12 @@ class EntityFactory:
                     bg_l.append(Background(f'Level1bg{i}', (0,0)))
                     bg_l.append(Background(f'Level1bg{i}', (W_WIDTH, 0)))
                 return bg_l
+            case 'Level2bg':
+                bg_l = []
+                for i in range(6):
+                    bg_l.append(Background(f'Level2bg{i}', (0, 0)))
+                    bg_l.append(Background(f'Level2bg{i}', (W_WIDTH, 0)))
+                return bg_l
             case 'Player1':
                 return Player('Player1', (-10, W_HEIGHT - 92))
             case 'Player2':
